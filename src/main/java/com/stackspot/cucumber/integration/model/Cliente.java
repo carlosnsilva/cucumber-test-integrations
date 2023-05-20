@@ -1,13 +1,14 @@
 package com.stackspot.cucumber.integration.model;
 
 import com.sun.istack.NotNull;
+import lombok.Getter;
+import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
+@Getter
+@Setter
 public class Cliente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,6 +19,7 @@ public class Cliente {
     private String nome;
     @NotNull
     private String email;
+    @ManyToOne
     private Conta conta;
 
 }

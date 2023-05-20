@@ -1,10 +1,14 @@
 package com.stackspot.cucumber.integration.service;
 
 import com.stackspot.cucumber.integration.model.Conta;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+@Service
+@RequiredArgsConstructor
 public class ContaService {
 
     private RestTemplate clientConta = new RestTemplate();
@@ -21,4 +25,5 @@ public class ContaService {
         }
 
     }
+
 }

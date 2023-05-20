@@ -1,4 +1,4 @@
-version: '3.3'
+version: '3.8'
 services:
   db:
     container_name: db
@@ -7,7 +7,17 @@ services:
     environment:
       POSTGRES_DB: stackspot
       POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
+      POSTGRES_PASSWORD: password
       TZ: America/Sao_Paulo
     ports:
       - '5432:5432'
+  pgadmin:
+    image: dpage/pgadmin4
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: password
+    depends_on:
+      - db
+    ports:
+      - '5050:80'
