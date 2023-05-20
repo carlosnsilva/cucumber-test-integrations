@@ -15,6 +15,8 @@ Start
 ```shell
 ./gradlew bootRun
 ```
+### Insomnia
+[cucumber-test.json](insomnia/cucumber-test.json)
 
 ###  Criar cliente
 ```shell
