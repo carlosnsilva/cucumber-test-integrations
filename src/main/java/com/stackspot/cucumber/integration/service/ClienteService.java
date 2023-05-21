@@ -1,5 +1,6 @@
 package com.stackspot.cucumber.integration.service;
 
+import com.stackspot.cucumber.integration.exception.ClienteNotFound;
 import com.stackspot.cucumber.integration.model.Cliente;
 import com.stackspot.cucumber.integration.repository.ClienteRepository;
 import com.stackspot.cucumber.integration.repository.ContaRepository;
@@ -7,7 +8,6 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -21,11 +21,11 @@ public class ClienteService {
     }
 
     public Cliente getCliente(Long id){
-        return this.clienteRepository.findById(id).orElse(null);
+        return this.clienteRepository.findById(id).orElseThrow(ClienteNotFound::new);
     }
 
-    public Optional<Cliente> getCliente(String cpf){
-        return this.clienteRepository.findByCpf(cpf);
+    public Cliente getCliente(String cpf){
+        return this.clienteRepository.findByCpf(cpf).orElseThrow(ClienteNotFound::new);
     }
 
     public Cliente saveCliente(Cliente cliente){

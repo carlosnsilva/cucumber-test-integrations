@@ -1,8 +1,7 @@
 package com.stackspot.cucumber.integration.model;
 
 import com.sun.istack.NotNull;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 

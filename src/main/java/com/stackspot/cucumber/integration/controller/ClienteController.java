@@ -11,13 +11,11 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.constraints.NotNull;
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/v1/clientes")
 @RequiredArgsConstructor
 public class ClienteController {
-
 
     private final ClienteService service;
     private final ClienteMapper clienteMapper;
@@ -30,7 +28,7 @@ public class ClienteController {
 
     @GetMapping("/{cpf}")
     @ResponseStatus(code = HttpStatus.OK)
-    public Optional<Cliente> getCliente(@NotNull @PathVariable("cpf") String cpf){
+    public Cliente getCliente(@NotNull @PathVariable("cpf") String cpf){
         return service.getCliente(cpf);
     }
 

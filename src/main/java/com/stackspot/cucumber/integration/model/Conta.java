@@ -18,6 +18,7 @@ public class Conta {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotNull
     private ContaStatus status;
 
     @NotNull

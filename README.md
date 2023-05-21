@@ -2,19 +2,9 @@
 
 Start
 ```shell
-cd local && ./start.sh
+docker-compose up -d
 ```
 
-Stop
-```shell
-cd local && ./stop.sh
-```
-
-### App
-Start
-```shell
-./gradlew bootRun
-```
 ### Insomnia
 [cucumber-test.json](insomnia/cucumber-test.json)
 
@@ -36,8 +26,12 @@ curl --request POST \
 
 ###  Buscar cliente
 ```shell
-curl --request GET \
-  --url http://localhost:8080/v1/clientes/980981200912
+curl --request GET --url http://localhost:8080/v1/clientes/980981200912
+```
+
+Stop
+```shell
+docker-compose down
 ```
 
 ## pgAdmin
