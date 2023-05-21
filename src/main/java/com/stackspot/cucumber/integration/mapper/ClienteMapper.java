@@ -11,7 +11,7 @@ public class ClienteMapper {
 
     private final ContaMapper contaMapper;
 
-    public Cliente toCliente(ClienteDTO clienteDTO) {
+    public Cliente fromDTO(ClienteDTO clienteDTO) {
         var cliente = new Cliente();
         cliente.setId(clienteDTO.getId());
         cliente.setNome(clienteDTO.getNome());
@@ -21,7 +21,7 @@ public class ClienteMapper {
         return cliente;
     }
 
-    public ClienteDTO fromCliente(Cliente cliente) {
+    public ClienteDTO toDTO(Cliente cliente) {
         return ClienteDTO.builder()
                 .id(cliente.getId())
                 .cpf(cliente.getCpf())

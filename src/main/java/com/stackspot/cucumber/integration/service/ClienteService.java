@@ -1,5 +1,6 @@
 package com.stackspot.cucumber.integration.service;
 
+import com.stackspot.cucumber.integration.exception.ClienteAlreadyExist;
 import com.stackspot.cucumber.integration.exception.ClienteNotFound;
 import com.stackspot.cucumber.integration.model.Cliente;
 import com.stackspot.cucumber.integration.repository.ClienteRepository;
@@ -20,16 +21,18 @@ public class ClienteService {
         return this.clienteRepository.findAll();
     }
 
-    public Cliente getCliente(Long id){
+    public Cliente getCliente(Long id) {
         return this.clienteRepository.findById(id).orElseThrow(ClienteNotFound::new);
     }
 
-    public Cliente getCliente(String cpf){
+    public Cliente getCliente(String cpf) {
         return this.clienteRepository.findByCpf(cpf).orElseThrow(ClienteNotFound::new);
     }
 
-    public Cliente saveCliente(Cliente cliente){
-        this.contaRepository.save(cliente.getConta());
-        return this.clienteRepository.save(cliente);
+    public Cliente saveCliente(Cliente cliente) {
+        var found = clienteRepository.findByCpf(cliente.getCpf()).stream().findFirst();
+        if(found.isPresent()) throw new ClienteAlreadyExist();
+        contaRepository.save(cliente.getConta());
+        return clienteRepository.save(cliente);
     }
 }

@@ -1,11 +1,7 @@
 package com.stackspot.cucumber.integration.setup;
 
 import com.stackspot.cucumber.integration.Application;
-import io.cucumber.java.BeforeAll;
 import io.cucumber.spring.CucumberContextConfiguration;
-import io.restassured.RestAssured;
-import org.junit.BeforeClass;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.server.LocalServerPort;

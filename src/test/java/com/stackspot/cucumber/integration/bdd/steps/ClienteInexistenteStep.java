@@ -8,7 +8,7 @@ import io.restassured.builder.RequestSpecBuilder;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class ClienteClienteInexistenteStep extends SpringContextTest {
+public class ClienteInexistenteStep extends SpringContextTest {
 
     @When("o cliente chama {string} passando um id inexistente")
     public void oClienteChamaVClientesPassandoUmIdInexistente(String basePath) {

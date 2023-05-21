@@ -16,17 +16,6 @@ services:
     ports:
       - '5432:5432'
 
-  app:
-    build:
-      context: .
-    environment:
-      DB_HOST: db
-    depends_on:
-      db:
-        condition: service_healthy
-    ports:
-      - '8080:8080'
-
   pgadmin:
     image: dpage/pgadmin4
     restart: always

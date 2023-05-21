@@ -13,6 +13,7 @@ public class Cliente {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @NotNull
+    @Column(unique=true)
     private String cpf;
     @NotNull
     private String nome;

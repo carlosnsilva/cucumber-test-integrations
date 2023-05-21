@@ -4,13 +4,14 @@ Start
 ```shell
 docker-compose up -d
 ```
-
-### Insomnia
-[cucumber-test.json](insomnia/cucumber-test.json)
+API
+```shell
+./gradlew bootRun
+```
 
 ###  Criar cliente
 ```shell
-curl --request POST \
+curl -v --request POST \
 --url http://localhost:8080/v1/clientes \
 --header 'Content-Type: application/json' \
 --data '{
@@ -32,6 +33,7 @@ curl --request GET --url http://localhost:8080/v1/clientes/980981200912
 Stop
 ```shell
 docker-compose down
+./gradlew -stop
 ```
 
 ## pgAdmin
@@ -61,3 +63,15 @@ and Save
 
 ## OpenAPI
 http://localhost:8080/swagger-ui.html 
+
+# Cucumber
+
+```shell
+./gradlew cucumber
+```
+
+Relatório em 
+[./build/reports/tests/test/index.html](./build/reports/tests/test/index.html)
+
+### Insomnia
+[cucumber-test.json](insomnia/cucumber-test.json)
