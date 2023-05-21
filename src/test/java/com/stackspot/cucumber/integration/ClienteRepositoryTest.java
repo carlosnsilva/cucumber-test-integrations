@@ -42,7 +42,7 @@ class ClienteRepositoryTest {
     private ClienteRepository clienterepository;
 
     @Test
-    void should_be_able_to_get_senior_consultant_by_technology(){
+    void should_be_able_to_save_client(){
         //arrange
         Conta conta1 = new Conta();
         conta1.setTipo(Conta.ContaTipo.CORRENTE);
