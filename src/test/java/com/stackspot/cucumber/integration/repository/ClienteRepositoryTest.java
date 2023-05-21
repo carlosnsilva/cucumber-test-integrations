@@ -2,16 +2,11 @@ package com.stackspot.cucumber.integration.repository;
 
 import com.stackspot.cucumber.integration.model.Cliente;
 import com.stackspot.cucumber.integration.model.Conta;
-import com.stackspot.cucumber.integration.repository.ClienteRepository;
-import com.stackspot.cucumber.integration.repository.ContaRepository;
-import com.stackspot.cucumber.integration.setup.SpringBootContextInitializer;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.test.context.ContextConfiguration;
-
-import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
