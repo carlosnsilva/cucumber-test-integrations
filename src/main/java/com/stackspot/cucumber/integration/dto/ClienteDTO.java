@@ -16,8 +16,6 @@ import javax.validation.constraints.NotNull;
 public class ClienteDTO  {
     private Long id;
     @NotNull
-    @Min(12)
-    @Max(12)
     private String cpf;
     @NotNull
     private String nome;
