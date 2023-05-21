@@ -21,7 +21,7 @@ import org.springframework.test.context.ContextConfiguration;
 public
 class SpringContextTest {
 
-    @LocalServerPort // 1
+    @LocalServerPort
     protected int port;
 
     public String baseURI(){

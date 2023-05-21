@@ -15,7 +15,7 @@ public class SpringBootContextInitializer implements ApplicationContextInitializ
         TestContainersSetup.initTestContainers(configurableApplicationContext.getEnvironment());
 
         // Inject containers' hostname and port into application context
-        TestPropertyValues values = TestPropertyValues.of(
+        var values = TestPropertyValues.of(
                 "spring.datasource.url=" + getPostgresqlDBContainerUrl()
         );
 
