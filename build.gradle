@@ -17,6 +17,7 @@ ext {
 	testContainersVersion = '1.18.1'
 	cucumberVersion = '7.12.0'
 	postgresqlVersion = '42.6.0'
+	restAssuredVersion = '4.5.1'
 }
 
 dependencies {
@@ -42,6 +43,11 @@ dependencies {
 	testImplementation "io.cucumber:cucumber-java:$cucumberVersion"
 	testImplementation "io.cucumber:cucumber-spring:$cucumberVersion"
 	testImplementation "io.cucumber:cucumber-junit-platform-engine:$cucumberVersion"
+
+	testImplementation "org.junit.jupiter:junit-jupiter-engine"
+
+	// rest-assured
+	testImplementation "io.rest-assured:rest-assured:$restAssuredVersion"
 
 }
 

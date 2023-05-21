@@ -1,40 +1,25 @@
-package com.stackspot.cucumber.integration;
+package com.stackspot.cucumber.integration.repository;
 
 import com.stackspot.cucumber.integration.model.Cliente;
 import com.stackspot.cucumber.integration.model.Conta;
 import com.stackspot.cucumber.integration.repository.ClienteRepository;
 import com.stackspot.cucumber.integration.repository.ContaRepository;
+import com.stackspot.cucumber.integration.setup.SpringBootContextInitializer;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
-import org.springframework.test.context.DynamicPropertyRegistry;
-import org.springframework.test.context.DynamicPropertySource;
-import org.testcontainers.containers.PostgreSQLContainer;
-import org.testcontainers.junit.jupiter.Container;
-import org.testcontainers.junit.jupiter.Testcontainers;
+import org.springframework.test.context.ContextConfiguration;
 
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-@Testcontainers
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE) // deactivate the default behaviour
 @DataJpaTest
+@ContextConfiguration(initializers = { SpringBootContextInitializer.class })
 class ClienteRepositoryTest {
-
-    @Container
-    static PostgreSQLContainer postgresqlContainer = new PostgreSQLContainer("postgres:11.1")
-            .withDatabaseName("test")
-            .withUsername("postgres")
-            .withPassword("password");
-
-    @DynamicPropertySource
-    static void setProperties(DynamicPropertyRegistry registry) {
-        registry.add("spring.datasource.url", postgresqlContainer::getJdbcUrl);
-        registry.add("spring.datasource.username", postgresqlContainer::getUsername);
-        registry.add("spring.datasource.password", postgresqlContainer::getPassword);
-    }
 
     @Autowired
     private ContaRepository contaRepository;

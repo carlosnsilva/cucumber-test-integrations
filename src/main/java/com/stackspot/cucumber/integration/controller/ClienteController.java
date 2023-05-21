@@ -34,7 +34,7 @@ public class ClienteController {
 
     @PostMapping
     @ResponseStatus(code = HttpStatus.CREATED)
-    public Cliente createClient(@Validated @RequestBody ClienteDTO clienteDTO){
+    public Cliente createCliente(@Validated @RequestBody ClienteDTO clienteDTO){
         var cliente = clienteMapper.toCliente(clienteDTO);
         return service.saveCliente(cliente);
     }
