@@ -11,10 +11,12 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 class GlobalExceptionHandler {
     @ResponseStatus(value = HttpStatus.NOT_FOUND, reason = "Cliente nao encontrado!")
     @ExceptionHandler(ClienteNotFound.class)
-    void clienteNotFound(ClienteNotFound exception) {}
+    void clienteNotFound(ClienteNotFound exception) {
+    }
 
     @ResponseStatus(value = HttpStatus.CONFLICT, reason = "Cliente já existe!")
     @ExceptionHandler(ClienteAlreadyExist.class)
-    void clienteAlreadyExist(ClienteNotFound exception) {}
+    void clienteAlreadyExist(ClienteAlreadyExist exception) {
+    }
 
 }

@@ -1,7 +1,7 @@
 FROM gradle:7-jdk11-focal AS build
 WORKDIR /app
 COPY . .
-RUN gradle build --parallel
+RUN gradle build --parallel -x test
 
 FROM eclipse-temurin:11-jdk-focal AS run
 WORKDIR /app

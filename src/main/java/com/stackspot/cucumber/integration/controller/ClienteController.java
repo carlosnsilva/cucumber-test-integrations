@@ -1,8 +1,6 @@
 package com.stackspot.cucumber.integration.controller;
 
 import com.stackspot.cucumber.integration.dto.ClienteDTO;
-import com.stackspot.cucumber.integration.exception.ClienteAlreadyExist;
-import com.stackspot.cucumber.integration.exception.ClienteNotFound;
 import com.stackspot.cucumber.integration.mapper.ClienteMapper;
 import com.stackspot.cucumber.integration.service.ClienteService;
 import lombok.RequiredArgsConstructor;
@@ -31,13 +29,13 @@ public class ClienteController {
 
     @GetMapping("/{cpf}")
     @ResponseStatus(code = HttpStatus.OK)
-    public ClienteDTO getCliente(@NotNull @PathVariable("cpf") String cpf) throws ClienteNotFound {
+    public ClienteDTO getCliente(@NotNull @PathVariable("cpf") String cpf) {
         return clienteMapper.toDTO(service.getCliente(cpf));
     }
 
     @PostMapping
     @ResponseStatus(code = HttpStatus.CREATED)
-    public ClienteDTO createCliente(@Validated @RequestBody ClienteDTO clienteDTO) throws ClienteAlreadyExist {
+    public ClienteDTO createCliente(@Validated @RequestBody ClienteDTO clienteDTO) {
         var cliente = clienteMapper.fromDTO(clienteDTO);
         return clienteMapper.toDTO(service.saveCliente(cliente));
     }

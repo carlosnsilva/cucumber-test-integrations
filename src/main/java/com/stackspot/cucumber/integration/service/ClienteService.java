@@ -17,7 +17,7 @@ public class ClienteService {
     private final ClienteRepository clienteRepository;
     private final ContaRepository contaRepository;
 
-    public List<Cliente> getClientes(){
+    public List<Cliente> getClientes() {
         return this.clienteRepository.findAll();
     }
 
@@ -31,7 +31,7 @@ public class ClienteService {
 
     public Cliente saveCliente(Cliente cliente) {
         var found = clienteRepository.findByCpf(cliente.getCpf()).stream().findFirst();
-        if(found.isPresent()) throw new ClienteAlreadyExist();
+        if (found.isPresent()) throw new ClienteAlreadyExist();
         contaRepository.save(cliente.getConta());
         return clienteRepository.save(cliente);
     }

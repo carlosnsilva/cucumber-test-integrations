@@ -48,7 +48,6 @@ dependencies {
 	testImplementation "io.cucumber:cucumber-spring:$cucumberVersion"
 	testImplementation "io.cucumber:cucumber-junit-platform-engine:$cucumberVersion"
 
-
 	// rest-assured
 	testImplementation "io.rest-assured:rest-assured:$restAssuredVersion"
 

@@ -5,6 +5,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 
 @Data
@@ -14,6 +16,8 @@ import javax.validation.constraints.NotNull;
 public class ClienteDTO  {
     private Long id;
     @NotNull
+    @Min(12)
+    @Max(12)
     private String cpf;
     @NotNull
     private String nome;
