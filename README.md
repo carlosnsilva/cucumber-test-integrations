@@ -57,3 +57,7 @@ username: postgres
 password: password
 ```
 and Save
+
+
+## OpenAPI
+http://localhost:8080/swagger-ui.html 
