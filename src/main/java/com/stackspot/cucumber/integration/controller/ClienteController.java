@@ -18,26 +18,25 @@ import java.util.stream.Collectors;
 public class ClienteController {
 
     private final ClienteService service;
-    private final ClienteMapper clienteMapper;
-
+    private final ClienteMapper mapper;
 
     @GetMapping
     @ResponseStatus(code = HttpStatus.OK)
     public List<ClienteDTO> getAll(){
-        return service.getClientes().stream().map(clienteMapper::toDTO).collect(Collectors.toList());
+        return service.getClientes().stream().map(mapper::toDTO).collect(Collectors.toList());
     }
 
     @GetMapping("/{cpf}")
     @ResponseStatus(code = HttpStatus.OK)
     public ClienteDTO getCliente(@NotNull @PathVariable("cpf") String cpf) {
-        return clienteMapper.toDTO(service.getCliente(cpf));
+        return mapper.toDTO(service.getCliente(cpf));
     }
 
     @PostMapping
     @ResponseStatus(code = HttpStatus.CREATED)
     public ClienteDTO createCliente(@Validated @RequestBody ClienteDTO clienteDTO) {
-        var cliente = clienteMapper.fromDTO(clienteDTO);
-        return clienteMapper.toDTO(service.saveCliente(cliente));
+        var cliente = mapper.fromDTO(clienteDTO);
+        return mapper.toDTO(service.saveCliente(cliente));
     }
     
 }

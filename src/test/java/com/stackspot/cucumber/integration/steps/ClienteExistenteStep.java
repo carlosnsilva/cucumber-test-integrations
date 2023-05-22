@@ -1,4 +1,4 @@
-package com.stackspot.cucumber.integration.bdd.steps;
+package com.stackspot.cucumber.integration.steps;
 
 import com.stackspot.cucumber.integration.setup.SpringContextTest;
 import io.cucumber.java.en.Then;
