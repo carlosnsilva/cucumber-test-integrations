@@ -49,6 +49,12 @@ tasks.named('test') {
 	useJUnitPlatform()
 }
 
+task integrationTest(type: Test){
+	filter {
+		excludeTestsMatching("repository*")
+	}
+}
+
 configurations {
 	cucumberRuntime {
 		extendsFrom testImplementation

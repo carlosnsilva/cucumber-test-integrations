@@ -1,5 +1,6 @@
 package com.stackspot.cucumber.integration.repository;
 
+import com.stackspot.cucumber.integration.integration.setup.SpringBootContextInitializer;
 import com.stackspot.cucumber.integration.model.Cliente;
 import com.stackspot.cucumber.integration.model.Conta;
 import org.junit.jupiter.api.Test;
@@ -13,7 +14,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE) // deactivate the default behaviour
 @DataJpaTest
-@ContextConfiguration(initializers = { SpringBootContextInitializer.class })
+//@ContextConfiguration(initializers = { SpringBootContextInitializer.class })
 class ClienteRepositoryTest {
 
     @Autowired

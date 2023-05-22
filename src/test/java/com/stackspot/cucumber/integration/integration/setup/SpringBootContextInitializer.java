@@ -6,14 +6,11 @@ import org.springframework.context.ConfigurableApplicationContext;
 
 public class SpringBootContextInitializer implements ApplicationContextInitializer<ConfigurableApplicationContext> {
 
-    @Value("path.docker.compose")
-    private String composePath;
-
     @Override
     public void initialize(ConfigurableApplicationContext configurableApplicationContext) {
 
         // Initialize and start test containers
-        TestContainersSetup.initTestContainers(composePath);
+        TestContainersSetup.initTestContainers("src/test/resources/compose/docker-compose.yml");
 
     }
 }
