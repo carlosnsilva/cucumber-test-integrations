@@ -1,12 +1,2 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="1" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="67.495">
-    <testcase classname="Consultado cliente" name="Com sucesso" time="0.084">
-        <failure message="The scenario has pending or undefined step(s)" type="java.lang.Exception">
-            <![CDATA[Dado o endpoint "GET" "/v1/clientes" "1.1" "Com sucesso"....................undefined
-Quando envia a requisicao ""................................................skipped
-Entao devera retornar statusCode "200"......................................skipped
-E o payload contendo a resposta da requisicao ""............................skipped
-]]>
-        </failure>
-    </testcase>
-</testsuite>
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" time="30.572"/>
