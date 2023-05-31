@@ -2,7 +2,7 @@
 
 Funcionalidade: Consultado cliente
 
-  Cenário: Com sucesso
+  Cenário: Consultando cliente com sucesso
     Dado o endpoint "<verbo>" "<rota>" "<id>" "<descricao>"
     Quando envia a requisicao "<request>"
     Entao devera retornar statusCode "<statushttp>"

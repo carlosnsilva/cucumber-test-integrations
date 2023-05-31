@@ -18,8 +18,8 @@ create table CLIENTE
 
 );
 
-INSERT INTO CONTA( status, tipo)
-VALUES(0,0);
+--INSERT INTO CONTA( status, tipo)
+--VALUES(0,0);
 
-INSERT INTO CLIENTE(cpf, email, nome, conta_id)
-VALUES ('98098120061','carlos@test.com', 'Carlos', 1);
+--INSERT INTO CLIENTE(cpf, email, nome, conta_id)
+--VALUES ('98098120061','carlos@test.com', 'Carlos', 1);

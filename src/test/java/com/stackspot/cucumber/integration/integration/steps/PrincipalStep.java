@@ -26,8 +26,8 @@ public class PrincipalStep {
 
     private String baseURL = "http://localhost";
     private String basePath = "v1/clientes";
-    private String payloadsRequest = "src/test/resources/payload/request";
-    private String payloadResponse = "src/test/resources/payload/response";
+    private String payloadsRequest = "src/test/resources/payload/request/";
+    private String payloadResponse = "src/test/resources/payload/response/";
     private String verbo;
     private String rota;
     private ResponseEntity<String> response;
@@ -45,9 +45,10 @@ public class PrincipalStep {
     @Quando("envia a requisicao {string}")
     public void envia_a_requisicao(String request) throws Exception {
         if(verbo.equals("GET")){
-            this.response = getResource();
+            this.response = this.getResource();
 
         }else if(verbo.equals("POST")){
+            this.response = this.saveResource(this.verbo, request);
 
         }else if(verbo.equals("PUT")){
 
@@ -62,7 +63,7 @@ public class PrincipalStep {
     @Entao("devera retornar statusCode {string}")
     public void devera_retornar_status_code(String statusCode) {
         System.out.println("Response: "+this.response.getBody().toString());
-        assertEquals(statusCode, String.valueOf(this.response.getStatusCode()));
+        assertEquals(statusCode, String.valueOf(this.response.getStatusCodeValue()));
     }
     @Entao("o payload contendo a resposta da requisicao {string}")
     public void o_payload_contendo_a_resposta_da_requisicao(String response) throws IOException, JSONException {
@@ -76,7 +77,7 @@ public class PrincipalStep {
     }
 
     private ResponseEntity<String> getResource(){
-        return this.restTemplate.getForEntity(this.getURL(rota), String.class);
+        return this.restTemplate.getForEntity(this.getURL(this.rota), String.class);
     }
 
     private ResponseEntity<String> saveResource(String verbo, String request) throws Exception {
