@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="2" time="33.54">
-    <testcase classname="Cadastrando cliente" name="Cadastrando cliente com sucesso" time="1.783">
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="2" time="38.563">
+    <testcase classname="Cadastrando cliente" name="Cadastrando cliente com sucesso" time="1.467">
         <system-out>
             <![CDATA[Dado o endpoint "POST" "/clientes" "1.1" "Com sucesso"......................passed
 Quando envia a requisicao "cadastrando/cadastrandoRequest"..................passed
@@ -9,7 +9,7 @@ E o payload contendo a resposta da requisicao "cadastrando/cadastrandoResponse".
 ]]>
         </system-out>
     </testcase>
-    <testcase classname="Consultado cliente" name="Consultando cliente com sucesso" time="0.143">
+    <testcase classname="Consultado cliente" name="Consultando cliente com sucesso" time="0.17">
         <system-out>
             <![CDATA[Dado o endpoint "GET" "/clientes" "1.1" "Com sucesso".......................passed
 Quando envia a requisicao ""................................................passed
