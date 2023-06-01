@@ -41,7 +41,7 @@ jobs:
       - name: Integration Tests
         run:  gradle integrationTest     
   Horusec-Security:
-    needs: Build
+    needs: Execute_Integrations_Tests:
     name: horusec-security
     runs-on: ubuntu-latest
     steps:
