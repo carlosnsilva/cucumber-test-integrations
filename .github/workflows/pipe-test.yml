@@ -38,8 +38,8 @@ jobs:
         with:
           java-version: '11'
           distribution: 'temurin'
-      - name: Unit Tests
-        run:  gradle integrationsTest     
+      - name: Integration Tests
+        run:  gradle integrationTest     
   
   
   
