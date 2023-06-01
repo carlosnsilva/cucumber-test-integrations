@@ -1,40 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="2" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="2" time="24.75">
-    <testcase classname="Cadastrando cliente" name="Cadastrando cliente com sucesso" time="0.102">
-        <failure message="class path resource [src/test/resources/payload/request/cadastrando/cadastrando.json] cannot be resolved to URL because it does not exist" type="java.io.FileNotFoundException">
-            <![CDATA[Dado o endpoint "POST" "" "1.1" "Com sucesso"...............................passed
-Quando envia a requisicao "cadastrando/cadastrando".........................failed
-Entao devera retornar statusCode "200"......................................skipped
-E o payload contendo a resposta da requisicao "src/test/resources/payload/response/cadastrando/cadastrando".skipped
-
-StackTrace:
-java.io.FileNotFoundException: class path resource [src/test/resources/payload/request/cadastrando/cadastrando.json] cannot be resolved to URL because it does not exist
-	at org.springframework.core.io.ClassPathResource.getURL(ClassPathResource.java:214)
-	at org.springframework.core.io.AbstractFileResolvingResource.getFile(AbstractFileResolvingResource.java:160)
-	at com.stackspot.cucumber.integration.integration.steps.PrincipalStep.readJsonFile(PrincipalStep.java:105)
-	at com.stackspot.cucumber.integration.integration.steps.PrincipalStep.saveResource(PrincipalStep.java:89)
-	at com.stackspot.cucumber.integration.integration.steps.PrincipalStep.envia_a_requisicao(PrincipalStep.java:51)
-	at ✽.envia a requisicao "cadastrando/cadastrando"(classpath:features/CadastrandoCliente.feature:7)
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="2" time="33.54">
+    <testcase classname="Cadastrando cliente" name="Cadastrando cliente com sucesso" time="1.783">
+        <system-out>
+            <![CDATA[Dado o endpoint "POST" "/clientes" "1.1" "Com sucesso"......................passed
+Quando envia a requisicao "cadastrando/cadastrandoRequest"..................passed
+Entao devera retornar statusCode "201"......................................passed
+E o payload contendo a resposta da requisicao "cadastrando/cadastrandoResponse".passed
 ]]>
-        </failure>
+        </system-out>
     </testcase>
-    <testcase classname="Consultado cliente" name="Consultando cliente com sucesso" time="0.924">
-        <failure message="expected: &lt;null&gt; but was: &lt;[]&gt;" type="org.opentest4j.AssertionFailedError">
-            <![CDATA[Dado o endpoint "GET" "" "1.1" "Com sucesso"................................passed
+    <testcase classname="Consultado cliente" name="Consultando cliente com sucesso" time="0.143">
+        <system-out>
+            <![CDATA[Dado o endpoint "GET" "/clientes" "1.1" "Com sucesso".......................passed
 Quando envia a requisicao ""................................................passed
 Entao devera retornar statusCode "200"......................................passed
-E o payload contendo a resposta da requisicao ""............................failed
-
-StackTrace:
-org.opentest4j.AssertionFailedError: expected: <null> but was: <[]>
-	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
-	at org.junit.jupiter.api.AssertNull.failNotNull(AssertNull.java:54)
-	at org.junit.jupiter.api.AssertNull.assertNull(AssertNull.java:38)
-	at org.junit.jupiter.api.AssertNull.assertNull(AssertNull.java:33)
-	at org.junit.jupiter.api.Assertions.assertNull(Assertions.java:275)
-	at com.stackspot.cucumber.integration.integration.steps.PrincipalStep.o_payload_contendo_a_resposta_da_requisicao(PrincipalStep.java:71)
-	at ✽.o payload contendo a resposta da requisicao ""(classpath:features/ConsultadoCliente.feature:9)
+E o payload contendo a resposta da requisicao "consultando/consultandoResponse".passed
 ]]>
-        </failure>
+        </system-out>
     </testcase>
 </testsuite>

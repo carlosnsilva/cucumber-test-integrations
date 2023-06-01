@@ -1,8 +1,9 @@
 create table CONTA
 (
-    ID     bigint  primary key,
+    ID    bigint GENERATED ALWAYS AS IDENTITY,
     STATUS integer,
-    TIPO   integer
+    TIPO   integer,
+    primary key(ID)
 );
 
 create table CLIENTE

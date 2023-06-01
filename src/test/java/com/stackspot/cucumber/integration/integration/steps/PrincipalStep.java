@@ -25,9 +25,9 @@ public class PrincipalStep {
     private int port = 8080;
 
     private String baseURL = "http://localhost";
-    private String basePath = "v1/clientes";
-    private String payloadsRequest = "src/test/resources/payload/request/";
-    private String payloadResponse = "src/test/resources/payload/response/";
+    private String basePath = "v1";
+    private String payloadsRequest = "payload/request/";
+    private String payloadResponse = "payload/response/";
     private String verbo;
     private String rota;
     private ResponseEntity<String> response;
