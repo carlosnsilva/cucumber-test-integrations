@@ -16,7 +16,7 @@ jobs:
           distribution: 'temurin'
       - name: Build with gradle
         run:  gradle build -x test    
-  Execute Unit Tests:
+  Execute_Unit_Tests:
     needs: Build
     runs-on: ubuntu-latest
     steps:
