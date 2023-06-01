@@ -14,7 +14,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE) // deactivate the default behaviour
 @DataJpaTest
-//@ContextConfiguration(initializers = { SpringBootContextInitializer.class })
+@ContextConfiguration(initializers = { SpringBootContextInitializer.class })
 class ClienteRepositoryTest {
 
     @Autowired
