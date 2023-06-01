@@ -37,8 +37,6 @@ public class PrincipalStep {
 
     @Dado("o endpoint {string} {string} {string} {string}")
     public void o_endpoint(String verbo, String rota, String id, String descricao) {
-        System.out.println("LOG: "+descricao);
-
         this.verbo = verbo;
         this.rota = rota;
     }
@@ -62,7 +60,6 @@ public class PrincipalStep {
     }
     @Entao("devera retornar statusCode {string}")
     public void devera_retornar_status_code(String statusCode) {
-        System.out.println("Response: "+this.response.getBody().toString());
         assertEquals(statusCode, String.valueOf(this.response.getStatusCodeValue()));
     }
     @Entao("o payload contendo a resposta da requisicao {string}")
