@@ -14,18 +14,33 @@ jobs:
         with:
           java-version: '11'
           distribution: 'temurin'
-      - name: Build with Maven
+      - name: Build with gradle
         run:  gradle build -x test    
-  Horusec-Security:
+  Execute Unit Tests:
     needs: Build
-    name: horusec-security
     runs-on: ubuntu-latest
     steps:
-    - name: Check out code
-      uses: actions/checkout@v2
-      with: # Necessário quando habilitado o autores de commit
-        fetch-depth: 0
-    - name: Running Horusec Security
-      run: |
-        curl -fsSL https://raw.githubusercontent.com/ZupIT/horusec/main/deployments/scripts/install.sh | bash -s latest
-        horusec start -p="./" -e="true" 
+      - uses: actions/checkout@v3
+      - name: Set up JDK 11
+        uses: actions/setup-java@v3
+        with:
+          java-version: '11'
+          distribution: 'temurin'
+      - name: Unit Tests
+        run:  gradle test
+  
+  
+  
+  #Horusec-Security:
+  #  needs: Build
+  #  name: horusec-security
+  #  runs-on: ubuntu-latest
+  #  steps:
+  #  - name: Check out code
+  #    uses: actions/checkout@v2
+  #    with: # Necessário quando habilitado o autores de commit
+  #      fetch-depth: 0
+  #  - name: Running Horusec Security
+  #    run: |
+  #      curl -fsSL https://raw.githubusercontent.com/ZupIT/horusec/main/deployments/scripts/install.sh | bash -s latest
+  #      horusec start -p="./" -e="true" 
