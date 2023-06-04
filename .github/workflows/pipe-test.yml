@@ -40,7 +40,7 @@ jobs:
           distribution: 'temurin'
       - name: Integration Tests
         run:  gradle integrationTest     
-  Code Coverage Report:
+  Code_Coverage_Report:
     needs: Execute_Integrations_Tests
     runs-on: ubuntu-latest
     steps:
