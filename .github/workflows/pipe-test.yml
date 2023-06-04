@@ -44,6 +44,9 @@ jobs:
     needs: Execute_Integrations_Tests
     name: horusec-security
     runs-on: ubuntu-latest
+    container:
+      image: horuszup/horusec-cli
+      options: --user ubuntu
     steps:
     - name: Check out code
       uses: actions/checkout@v2
