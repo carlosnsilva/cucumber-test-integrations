@@ -50,7 +50,6 @@ jobs:
       with: # Necessário quando habilitado o autores de commit
         fetch-depth: 0
     - name: Running Horusec Security
-      options: --user ubuntu
       run: |
         curl -fsSL https://raw.githubusercontent.com/ZupIT/horusec/main/deployments/scripts/install.sh | bash -s latest
         horusec start -p="./" -e="true" 
