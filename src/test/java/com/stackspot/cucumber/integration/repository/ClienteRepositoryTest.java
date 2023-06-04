@@ -1,8 +1,8 @@
 package com.stackspot.cucumber.integration.repository;
 
+import com.stackspot.cucumber.integration.integration.setup.SpringBootContextInitializer;
 import com.stackspot.cucumber.integration.model.Cliente;
 import com.stackspot.cucumber.integration.model.Conta;
-import com.stackspot.cucumber.integration.setup.SpringBootContextInitializer;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
