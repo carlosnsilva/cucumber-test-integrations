@@ -3,6 +3,7 @@ plugins {
 	id 'org.springframework.boot' version '2.7.12'
 	id 'io.spring.dependency-management' version '1.1.0'
 	id 'se.thinkcode.cucumber-runner' version '0.0.11'
+	id 'jacoco'
 }
 
 group = 'com.stackspot'
@@ -45,8 +46,12 @@ dependencies {
 
 }
 
-tasks.named('test') {
+test {
 	useJUnitPlatform()
+	finalizedBy jacocoTestReport
+	filter {
+		excludeTestsMatching("integration*")
+	}
 }
 
 task integrationTest(type: Test){
@@ -58,5 +63,18 @@ task integrationTest(type: Test){
 configurations {
 	cucumberRuntime {
 		extendsFrom testImplementation
+	}
+}
+
+jacoco {
+	toolVersion = "0.8.5"
+	reportsDirectory = layout.buildDirectory.dir("$buildDir/reports/jacoco").get()
+}
+
+jacocoTestReport {
+	dependsOn test
+	reports {
+		xml.enabled true
+		html.destination file("${buildDir}/reports/jacoco/jacocoHtml")
 	}
 }
