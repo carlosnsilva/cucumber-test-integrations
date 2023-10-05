@@ -44,6 +44,10 @@ dependencies {
 	// rest-assured
 	testImplementation "io.rest-assured:rest-assured:$restAssuredVersion"
 
+	// mockito
+	testImplementation group: 'org.mockito', name: 'mockito-core', version: '5.4.0'
+
+
 }
 
 test {
