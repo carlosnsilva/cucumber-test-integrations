@@ -2,6 +2,8 @@ package com.stackspot.cucumber.integration.mapper;
 
 import com.stackspot.cucumber.integration.dto.ClienteDTO;
 import com.stackspot.cucumber.integration.model.Cliente;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
