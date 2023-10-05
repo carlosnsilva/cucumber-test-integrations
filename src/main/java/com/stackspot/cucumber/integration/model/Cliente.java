@@ -6,6 +6,9 @@ import lombok.*;
 import javax.persistence.*;
 
 @Entity
+@Data
+@NoArgsConstructor(force = true)
+@AllArgsConstructor
 @Getter
 @Setter
 public class Cliente {

@@ -47,6 +47,10 @@ dependencies {
 	// mockito
 	testImplementation group: 'org.mockito', name: 'mockito-core', version: '5.4.0'
 
+	// pl.pojo
+	testImplementation group: 'pl.pojo', name: 'pojo-tester', version: '0.7.6'
+
+
 
 }
 
