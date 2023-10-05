@@ -1,8 +1,7 @@
 package com.stackspot.cucumber.integration.model;
 
 import com.sun.istack.NotNull;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,6 +9,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
+@Data
+@NoArgsConstructor(force = true)
+@AllArgsConstructor
 @Getter
 @Setter
 public class Conta {
